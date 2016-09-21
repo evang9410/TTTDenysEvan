@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TTTEvanDenys</string>
+    <string name="btn_reset">Reset</string>
+    <string name="btn_about">About</string>
+    <string name="btn_zero">Zero</string>
+    <string name="btn_scores">Scores</string>
+    <string name="btn_play">Play</string>
+    <string name="playing_player1">Player1\'s Turn</string>
+    <string name="playing_player2">Player2\'s Turn </string>
+</resources>
