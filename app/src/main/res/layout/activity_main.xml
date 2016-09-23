@@ -20,24 +20,33 @@
             android:layout_height="@dimen/tile_size"
             android:id="@+id/tile_1"
             android:layout_weight="1"
-            android:tag="1"
-            android:onClick="tile_click"/>
+            android:onClick="tile_click"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:tag=""
+            android:src="@drawable/tile"/>
 
         <ImageButton
             android:layout_width="@dimen/tile_size"
             android:layout_height="@dimen/tile_size"
             android:id="@+id/tile_2"
             android:layout_weight="1"
-            android:tag="2"
-            android:onClick="tile_click" />
+            android:onClick="tile_click"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:tag=""
+            android:src="@drawable/tile"/>
 
         <ImageButton
             android:layout_width="@dimen/tile_size"
             android:layout_height="@dimen/tile_size"
             android:id="@+id/tile_3"
             android:layout_weight="1"
-            android:tag="3"
-            android:onClick="tile_click"/>
+            android:onClick="tile_click"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:tag=""
+            android:src="@drawable/tile"/>
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -49,24 +58,33 @@
             android:layout_height="@dimen/tile_size"
             android:id="@+id/tile_4"
             android:layout_weight="1"
-            android:tag="4"
-            android:onClick="tile_click"/>
+            android:onClick="tile_click"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:tag=""
+            android:src="@drawable/tile"/>
 
         <ImageButton
             android:layout_width="@dimen/tile_size"
             android:layout_height="@dimen/tile_size"
             android:id="@+id/tile_5"
             android:layout_weight="1"
-            android:tag="5"
-            android:onClick="tile_click"/>
+            android:onClick="tile_click"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:tag=""
+            android:src="@drawable/tile"/>
 
         <ImageButton
             android:layout_width="@dimen/tile_size"
             android:layout_height="@dimen/tile_size"
             android:id="@+id/tile_6"
             android:layout_weight="1"
-            android:tag="6"
-            android:onClick="tile_click"/>
+            android:onClick="tile_click"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:tag=""
+            android:src="@drawable/tile"/>
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -78,24 +96,33 @@
             android:layout_height="@dimen/tile_size"
             android:id="@+id/tile_7"
             android:layout_weight="1"
-            android:tag="7"
-            android:onClick="tile_click"/>
+            android:onClick="tile_click"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:tag=""
+            android:src="@drawable/tile"/>
 
         <ImageButton
             android:layout_width="@dimen/tile_size"
             android:layout_height="@dimen/tile_size"
             android:id="@+id/tile_8"
             android:layout_weight="1"
-            android:tag="8"
-            android:onClick="tile_click"/>
+            android:onClick="tile_click"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:tag=""
+            android:src="@drawable/tile"/>
 
         <ImageButton
             android:layout_width="@dimen/tile_size"
             android:layout_height="@dimen/tile_size"
             android:id="@+id/tile_9"
             android:layout_weight="1"
-            android:tag="9"
-            android:onClick="tile_click"/>
+            android:onClick="tile_click"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:tag=""
+            android:src="@drawable/tile"/>
     </LinearLayout>
 
     <TextView
