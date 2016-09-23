@@ -7,12 +7,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
     // Class variables for the View objects
     private ImageButton tile_1, tile_2, tile_3, tile_4, tile_5, tile_6, tile_7, tile_8, tile_9;
     private ImageButton[] board = new ImageButton[9];
     private Button btn_reset, btn_about, btn_zero, btn_scores, btn_play;
     private int turn = 0;
+    private boolean isDroid = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +51,12 @@ public class MainActivity extends AppCompatActivity {
     public void tile_click(View v){
         ImageButton ib = (ImageButton)v;
         ib.setClickable(false);
-
         if(turn % 2 == 0){
             ib.setTag("x");
             ib.setImageResource(R.drawable.tile_x);
             turn++;
+            if(isDroid)
+                droid_turn();
         }
         else{
             ib.setTag("o");
@@ -60,6 +64,22 @@ public class MainActivity extends AppCompatActivity {
             turn++;
         }
         check_win();
+    }
+
+    private void droid_turn(){
+        Log.d("droid", "droid turn");
+        Random rnd = new Random();
+        int rng = rnd.nextInt(9);
+
+        while(true){
+            if(board[rng].getTag().equals("")) {
+                tile_click(board[rng]);
+                break;
+            }
+            else
+                rng = rnd.nextInt(9);
+        }
+
     }
 
     private void check_win(){
