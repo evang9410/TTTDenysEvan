@@ -82,90 +82,30 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void check_win(){
+   private String check_win(){
 
-        // Check across
-
-        // For X
-        if(board[0].getTag().equals("x") & board[1].getTag().equals("x") & board[2].getTag().equals("x")){
-            // player 1 wins
-            Log.d("winner", "x wins");
+        for(int i =0; i<3; i++)
+        {
+            //Check horizontal lines
+            if(board[i*3].getTag().equals(board[1+i*3]) && board[i*3].getTag().equals(board[2+i*3]))
+            {
+                return board[i*3].getTag().toString();
+            }
+            //Check vertical lines
+            else if(board[i].getTag().equals(board[3+i].getTag()) && board[i].getTag().equals(board[6+i].getTag()))
+            {
+                return board[i].getTag().toString();
+            }
+            //Check diagonals
+            else if(i < 2)
+            {
+                if(board[4].getTag().equals(board[i*2]) && board[4].getTag().equals(board[i*-2 + 8]))
+                {
+                    return board[4].getTag().toString();
+                }
+            }
         }
-        if(board[3].getTag().equals("x") & board[4].getTag().equals("x") & board[5].getTag().equals("x")){
-            // player 1 wins
-            Log.d("winner", "x wins");
-        }
-        if(board[6].getTag().equals("x") & board[7].getTag().equals("x") & board[8].getTag().equals("x")){
-            // player 1 wins
-            Log.d("winner", "x wins");
-        }
-
-        //For O
-        if(board[0].getTag().equals("o") & board[1].getTag().equals("o") & board[2].getTag().equals("o")){
-            // player 2 wins
-            Log.d("winner", "o wins");
-        }
-        if(board[3].getTag().equals("o") & board[4].getTag().equals("o") & board[5].getTag().equals("o")){
-            // player 2 wins
-            Log.d("winner", "o wins");
-        }
-        if(board[6].getTag().equals("o") & board[7].getTag().equals("o") & board[8].getTag().equals("o")){
-            // player 2 wins
-            Log.d("winner", "o wins");
-        }
-
-        // Check Vertical
-        // For X
-        if(board[0].getTag().equals("x") & board[3].getTag().equals("x") & board[6].getTag().equals("x")){
-            // player 1 wins
-            Log.d("winner", "x wins");
-        }
-        if(board[1].getTag().equals("x") & board[4].getTag().equals("x") & board[7].getTag().equals("x")){
-            // player 1 wins
-            Log.d("winner", "x wins");
-        }
-        if(board[2].getTag().equals("x") & board[5].getTag().equals("x") & board[8].getTag().equals("x")){
-            // player 1 wins
-            Log.d("winner", "x wins");
-        }
-
-        // For O
-        if(board[0].getTag().equals("o") & board[3].getTag().equals("o") & board[6].getTag().equals("o")){
-            // player 2 wins
-            Log.d("winner", "o wins");
-        }
-        if(board[1].getTag().equals("o") & board[4].getTag().equals("o") & board[7].getTag().equals("o")){
-            // player 2 wins
-            Log.d("winner", "o wins");
-        }
-        if(board[2].getTag().equals("o") & board[5].getTag().equals("o") & board[8].getTag().equals("o")){
-            // player 1 wins
-            Log.d("winner", "o wins");
-        }
-
-        // Check Diagonal
-        // For X
-        if(board[6].getTag().equals("x") & board[4].getTag().equals("x") & board[2].getTag().equals("x")){
-            // player 1 wins
-            Log.d("winner", "x wins");
-        }
-        if(board[0].getTag().equals("x") & board[4].getTag().equals("x") & board[8].getTag().equals("x")){
-            // player 1 wins
-            Log.d("winner", "x wins");
-        }
-
-        // For O
-        if(board[6].getTag().equals("o") & board[4].getTag().equals("o") & board[2].getTag().equals("o")){
-            // player 2 wins
-            Log.d("winner", "o wins");
-        }
-        if(board[0].getTag().equals("o") & board[4].getTag().equals("o") & board[8].getTag().equals("o")){
-            // player 2 wins
-            Log.d("winner", "o wins");
-        }
-
-
-
+        return "none";
     }
 
     /**
