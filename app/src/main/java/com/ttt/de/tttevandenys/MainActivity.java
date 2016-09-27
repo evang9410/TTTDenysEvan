@@ -11,11 +11,11 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     // Class variables for the View objects
-    private ImageButton tile_1, tile_2, tile_3, tile_4, tile_5, tile_6, tile_7, tile_8, tile_9;
     private ImageButton[] board = new ImageButton[9];
     private Button btn_reset, btn_about, btn_zero, btn_scores, btn_play;
     private int turn = 0;
     private boolean isDroid = true;
+    private boolean droidPlayed = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,35 +49,50 @@ public class MainActivity extends AppCompatActivity {
      * @param v
      */
     public void tile_click(View v){
+
         ImageButton ib = (ImageButton)v;
         ib.setClickable(false);
-        if(turn % 2 == 0){
-            ib.setTag("x");
-            ib.setImageResource(R.drawable.tile_x);
+        Log.d("chk", check_win());
+        if(check_win().equals("none")) {
+            if (turn % 2 == 0 && droidPlayed == false) {
+                Log.d("playerInfo", "Player turn: " + turn);
+                ib.setTag("x");
+                ib.setImageResource(R.drawable.tile_x);
+                turn++;
+
+            }
+            if (isDroid && turn%2 != 0){
+            Log.d("", "Droid: " + turn);
             turn++;
-            if(isDroid)
-                droid_turn();
+            droidPlayed=true;
+            droid_turn();
+            }
+            else if(droidPlayed==false) {
+                Log.d("", "Why the fuck am i even here?");
+                ib.setTag("o");
+                ib.setImageResource(R.drawable.tile_o);
+                turn++;
+            }
         }
-        else{
-            ib.setTag("o");
-            ib.setImageResource(R.drawable.tile_o);
-            turn++;
-        }
-        check_win();
+            Log.d("", check_win());
     }
 
     private void droid_turn(){
         Log.d("droid", "droid turn");
+        boolean play = true;
         Random rnd = new Random();
         int rng = rnd.nextInt(9);
-
-        while(true){
-            if(board[rng].getTag().equals("")) {
-                tile_click(board[rng]);
-                break;
+        if(check_win().equals("none")) {
+            while (play) {
+                if (!board[rng].getTag().equals("x") && !board[rng].getTag().equals("o")) {
+                    Log.d("droid", "And he tries playing at" + board[rng].getTag().toString());
+                    play=false;
+                    board[rng].setTag("o");
+                    board[rng].setImageResource(R.drawable.tile_o);
+                    tile_click(board[rng]);
+                } else
+                    rng = rnd.nextInt(9);
             }
-            else
-                rng = rnd.nextInt(9);
         }
 
     }
@@ -115,16 +130,6 @@ public class MainActivity extends AppCompatActivity {
      */
     private void load_gui(){
         // Load the ImageButtons
-        tile_1 = (ImageButton)findViewById(R.id.tile_1);
-        tile_2 = (ImageButton)findViewById(R.id.tile_2);
-        tile_3 = (ImageButton)findViewById(R.id.tile_3);
-        tile_4 = (ImageButton)findViewById(R.id.tile_4);
-        tile_5 = (ImageButton)findViewById(R.id.tile_5);
-        tile_6 = (ImageButton)findViewById(R.id.tile_6);
-        tile_7 = (ImageButton)findViewById(R.id.tile_7);
-        tile_8 = (ImageButton)findViewById(R.id.tile_8);
-        tile_9 = (ImageButton)findViewById(R.id.tile_9);
-
         board[0] = (ImageButton)findViewById(R.id.tile_1);
         board[1] = (ImageButton)findViewById(R.id.tile_2);
         board[2] = (ImageButton)findViewById(R.id.tile_3);
