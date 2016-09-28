@@ -70,10 +70,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 reset_board();
-                if(isDroid)
+
+                if(isDroid) {
                     isDroid = false;
-                else
+                    tv_playing.setText(R.string.playing_player1);
+                }
+                else {
                     isDroid = true;
+                    tv_playing.setText(R.string.playing_droid);
+                }
             }
         });
 
@@ -94,6 +99,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btn_about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                start_about();
+            }
+        });
+
 
     }
 
@@ -102,6 +114,11 @@ public class MainActivity extends AppCompatActivity {
     private void start_scores(){
         Intent scores_intent = new Intent(MainActivity.this,ScoresActivity.class);
         startActivity(scores_intent);
+    }
+
+    private void start_about(){
+        Intent about_intent = new Intent(MainActivity.this,AboutActivity.class);
+        startActivity(about_intent);
     }
 
     private void reset_board() {
@@ -141,7 +158,10 @@ public class MainActivity extends AppCompatActivity {
             if(turn % 2 == 0){
                 // Player1's turn
                 Log.d("Turn","player1 turn");
-                tv_playing.setText(R.string.playing_player1);
+                if(isDroid)
+                    tv_playing.setText(R.string.playing_droid);
+                else
+                    tv_playing.setText(R.string.playing_player1);
                 ib.setTag("x");
                 ib.setImageResource(R.drawable.tile_x);
                 turn++;
@@ -155,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
             else{
                 Log.d("Turn", "player2 turn");
                 if(!isDroid)
-                    tv_playing.setText(R.string.playing_player2);
+                    tv_playing.setText(R.string.playing_player1);
 
                 ib.setTag("o");
                 ib.setImageResource(R.drawable.tile_o);
@@ -184,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
                 editor.putInt("player2_wins", player2_wins);
                 editor.commit();
             }
-            if(turn == 9){
+            if(turn == 9 && check_win().equals("none")){
                 Toast toast = Toast.makeText(MainActivity.this,getText(R.string.draw_toast),Toast.LENGTH_LONG);
                 toast.show();
                 draw_count++;
@@ -433,7 +453,7 @@ public class MainActivity extends AppCompatActivity {
         if(isDroid){
             tv_playing.setText(R.string.playing_droid);
         }else{
-            tv_playing.setText(R.string.playing_player2);
+            tv_playing.setText(R.string.playing_droid);
         }
     }
     // INSTANCE STATE STUFF

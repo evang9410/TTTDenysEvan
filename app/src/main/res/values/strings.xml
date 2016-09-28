@@ -6,8 +6,7 @@
     <string name="btn_zero">Zero</string>
     <string name="btn_scores">Scores</string>
     <string name="btn_play">Play</string>
-    <string name="playing_player1">Player1\'s Turn</string>
-    <string name="playing_player2">Player2\'s Turn </string>
+    <string name="playing_player1">Player vs Player</string>
     <string name="playing_droid">Playing VS Droid</string>
 
     <!-- Strings for activity_score.xml -->
