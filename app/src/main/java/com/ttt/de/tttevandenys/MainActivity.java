@@ -97,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    
+
     private void start_scores(){
         Intent scores_intent = new Intent(MainActivity.this,ScoresActivity.class);
         startActivity(scores_intent);
@@ -128,39 +130,7 @@ public class MainActivity extends AppCompatActivity {
         toast.show();
     }
 
-    /**
-     * onClick Listener for the tiles in the board.
-     * Changes them to either X's or O's depending on the turn.
-     * @param v
-     */
-    /*public void tile_click(View v){
 
-        ImageButton ib = (ImageButton)v;
-        ib.setClickable(false);
-        Log.d("chk", check_win());
-        if(check_win().equals("none")) {
-            if (turn % 2 == 0 && droidPlayed == false) {
-                Log.d("playerInfo", "Player turn: " + turn);
-                ib.setTag("x");
-                ib.setImageResource(R.drawable.tile_x);
-                turn++;
-
-            }
-            if (isDroid && turn%2 != 0){
-            Log.d("", "Droid: " + turn);
-            turn++;
-            droidPlayed=true;
-            droid_turn();
-            }
-            else if(droidPlayed==false) {
-                Log.d("", "Why the fuck am i even here?");
-                ib.setTag("o");
-                ib.setImageResource(R.drawable.tile_o);
-                turn++;
-            }
-        }
-            Log.d("", check_win());
-    }*/
     public void tile_click(View v){
 
         SharedPreferences.Editor editor = prefs.edit();
@@ -176,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
                 ib.setImageResource(R.drawable.tile_x);
                 turn++;
                 check_win();
-                if(check_win().equals("none") & turn <= 9) {
+                if(check_win().equals("none") & turn < 9) {
                     if (isDroid) {
                         droid_turn();
                     }
@@ -192,35 +162,37 @@ public class MainActivity extends AppCompatActivity {
                 turn++;
                 check_win();
             }
+
+            if(check_win().equals("x")){
+                Toast toast = Toast.makeText(MainActivity.this,getText(R.string.p1_win_toast),Toast.LENGTH_SHORT);
+                toast.show();
+                player1_wins++;
+                editor.putInt("player1_wins", player1_wins);
+                editor.commit();
+            }
+            else if(check_win().equals("o") & isDroid){
+                Toast toast = Toast.makeText(MainActivity.this,getText(R.string.droid_wins_toast),Toast.LENGTH_SHORT);
+                toast.show();
+                droid_wins++;
+                editor.putInt("droid_wins", droid_wins);
+                editor.commit();
+            }
+            else if(check_win().equals("o") & isDroid == false){
+                Toast toast = Toast.makeText(MainActivity.this,getText(R.string.p2_win_toast),Toast.LENGTH_SHORT);
+                toast.show();
+                player2_wins++;
+                editor.putInt("player2_wins", player2_wins);
+                editor.commit();
+            }
+            if(turn == 9){
+                Toast toast = Toast.makeText(MainActivity.this,getText(R.string.draw_toast),Toast.LENGTH_LONG);
+                toast.show();
+                draw_count++;
+                editor.putInt("draw_count", draw_count);
+                editor.commit();
+            }
         }
-        if(check_win().equals("x")){
-            Toast toast = Toast.makeText(MainActivity.this,getText(R.string.p1_win_toast),Toast.LENGTH_SHORT);
-            toast.show();
-            player1_wins++;
-            editor.putInt("player1_wins", player1_wins);
-            editor.commit();
-        }
-        if(check_win().equals("o") & isDroid){
-            Toast toast = Toast.makeText(MainActivity.this,getText(R.string.droid_wins_toast),Toast.LENGTH_SHORT);
-            toast.show();
-            droid_wins++;
-            editor.putInt("droid_wins", droid_wins);
-            editor.commit();
-        }
-        if(check_win().equals("o") & isDroid == false){
-            Toast toast = Toast.makeText(MainActivity.this,getText(R.string.p2_win_toast),Toast.LENGTH_SHORT);
-            toast.show();
-            player2_wins++;
-            editor.putInt("player2_wins", player2_wins);
-            editor.commit();
-        }
-        if(turn > 9){
-            Toast toast = Toast.makeText(MainActivity.this,getText(R.string.draw_toast),Toast.LENGTH_LONG);
-            toast.show();
-            draw_count++;
-            editor.putInt("draw_count", draw_count);
-            editor.commit();
-        }
+
         save_board_state();
     }
 
