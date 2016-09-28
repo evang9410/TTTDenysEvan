@@ -1,4 +1,5 @@
 <resources>
+    <!-- Strings for the activity_main.xml -->
     <string name="app_name">TTTEvanDenys</string>
     <string name="btn_reset">Reset</string>
     <string name="btn_about">About</string>
@@ -7,4 +8,19 @@
     <string name="btn_play">Play</string>
     <string name="playing_player1">Player1\'s Turn</string>
     <string name="playing_player2">Player2\'s Turn </string>
+    <string name="playing_droid">Playing VS Droid</string>
+
+    <!-- Strings for activity_score.xml -->
+    <string name="stats">Statistics</string>
+    <string name="tv_player1_wins">Player1 Wins:</string>
+    <string name="tv_player2_wins">Player2 Wins:</string>
+    <string name="tv_droid_wins">Droid Wins:</string>
+    <string name="tv_draws">Draws:</string>
+
+    <!-- TOAST MESSAGES -->
+    <string name="zero_toast">Reset Scores to 0</string>
+    <string name="draw_toast">DRAW! Reset to play again</string>
+    <string name="p1_win_toast">Player1 Wins!</string>
+    <string name="p2_win_toast">Player2 Wins!</string>
+    <string name="droid_wins_toast">Droid Wins!</string>
 </resources>
