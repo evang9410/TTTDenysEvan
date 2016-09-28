@@ -14,6 +14,7 @@ public class ScoresActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scores);
         prefs = getSharedPreferences("scores",MODE_PRIVATE);
+
         load_textviews();
         load_scores();
     }
@@ -30,5 +31,16 @@ public class ScoresActivity extends AppCompatActivity {
         tv_p2_wins.setText(String.valueOf(prefs.getInt("player2_wins",0)));
         tv_droid_wins.setText(String.valueOf(prefs.getInt("droid_wins",0)));
         tv_draws.setText(String.valueOf(prefs.getInt("draw_count",0)));
+    }
+
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState){
+        super.onSaveInstanceState(outState);
+        outState.putInt("p1_score",prefs.getInt("player1_wins",0));
+        outState.putInt("p2_score",prefs.getInt("player2_wins",0));
+        outState.putInt("droid_score",prefs.getInt("droid_wins",0));
+        outState.putInt("draws",prefs.getInt("draw_count",0));
     }
 }

@@ -23,4 +23,7 @@
     <string name="p1_win_toast">Player1 Wins!</string>
     <string name="p2_win_toast">Player2 Wins!</string>
     <string name="droid_wins_toast">Droid Wins!</string>
+
+    <!-- About -->
+    <string name="about_text">This is the about screen add info about the game and yourselves if you please.</string>
 </resources>
