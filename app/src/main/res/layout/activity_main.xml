@@ -31,7 +31,8 @@
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
                 android:tag="1"
-                android:src="@drawable/tile"/>
+                android:src="@drawable/tile"
+                android:background="@color/transparent"/>
 
             <ImageButton
                 android:layout_width="0dp"
@@ -42,7 +43,8 @@
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
                 android:tag="2"
-                android:src="@drawable/tile"/>
+                android:src="@drawable/tile"
+                android:background="@color/transparent"/>
 
             <ImageButton
                 android:layout_width="0dp"
@@ -53,7 +55,8 @@
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
                 android:tag="3"
-                android:src="@drawable/tile"/>
+                android:src="@drawable/tile"
+                android:background="@color/transparent"/>
         </LinearLayout>
 
         <LinearLayout
@@ -71,7 +74,8 @@
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
                 android:tag="4"
-                android:src="@drawable/tile"/>
+                android:src="@drawable/tile"
+                android:background="@color/transparent"/>
 
             <ImageButton
                 android:layout_width="0dp"
@@ -82,7 +86,8 @@
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
                 android:tag="5"
-                android:src="@drawable/tile"/>
+                android:src="@drawable/tile"
+                android:background="@color/transparent"/>
 
             <ImageButton
                 android:layout_width="0dp"
@@ -93,14 +98,16 @@
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
                 android:tag="6"
-                android:src="@drawable/tile"/>
+                android:src="@drawable/tile"
+                android:background="@color/transparent"/>
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@color/transparent">
 
             <ImageButton
                 android:layout_width="0dp"
@@ -111,7 +118,8 @@
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
                 android:tag="7"
-                android:src="@drawable/tile"/>
+                android:src="@drawable/tile"
+                android:background="@color/transparent"/>
 
             <ImageButton
                 android:layout_width="0dp"
@@ -122,7 +130,8 @@
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
                 android:tag="8"
-                android:src="@drawable/tile"/>
+                android:src="@drawable/tile"
+                android:background="@color/transparent"/>
 
             <ImageButton
                 android:layout_width="0dp"
@@ -133,7 +142,8 @@
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
                 android:tag="9"
-                android:src="@drawable/tile"/>
+                android:src="@drawable/tile"
+                android:background="@color/transparent"/>
         </LinearLayout>
     </LinearLayout>
 <LinearLayout

@@ -24,5 +24,8 @@
     <string name="droid_wins_toast">Droid Wins!</string>
 
     <!-- About -->
-    <string name="about_text">This is the about screen add info about the game and yourselves if you please.</string>
+    <string name="about_text"><b>Tic Tac Toe</b> a game of true wit, where players place either an X or an
+    O in 3 consecutive spaces to score a point and win the game! Play as much as you like, scores are
+    stored in the Scores section of this app. Don\'t forget, this is just a game and remember to have fun!</string>
+    <string name="about_authors"> Written by:\nEvan Glicakis\nDenys Melyukhov</string>
 </resources>

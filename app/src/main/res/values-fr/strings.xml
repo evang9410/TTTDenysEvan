@@ -1,0 +1,31 @@
+<resources>
+    <!-- Strings for the activity_main.xml -->
+    <string name="app_name">TTTEvanDenys</string>
+    <string name="btn_reset">Réinitialiser</string>
+    <string name="btn_about">Information</string>
+    <string name="btn_zero">Zéro</string>
+    <string name="btn_scores">Les Mark</string>
+    <string name="btn_play">Jouer</string>
+    <string name="playing_player1">Joueur Contre Joueur</string>
+    <string name="playing_droid">Joueur Contre Le Droid</string>
+
+    <!-- Strings for activity_score.xml -->
+    <string name="stats">Statistiques</string>
+    <string name="tv_player1_wins">Joueur1 Gagner:</string>
+    <string name="tv_player2_wins">Joueur2 Gagner:</string>
+    <string name="tv_droid_wins">Droid Gagner:</string>
+    <string name="tv_draws">match nul:</string>
+
+    <!-- TOAST MESSAGES -->
+    <string name="zero_toast">Réinitialiser les mark à 0</string>
+    <string name="draw_toast">MATCH NUL! Réinitialiser pour jouer encore</string>
+    <string name="p1_win_toast">Joueur1 Gagner!</string>
+    <string name="p2_win_toast">Joueur2 Gagner!</string>
+    <string name="droid_wins_toast">Droid Gagner!</string>
+
+    <!-- About -->
+    <string name="about_text"><b>Tic Tac Toe</b> un jeu de strategie et de l\'esprit où les joueur mettre
+    un X où une O en 3 consécutive carrés pour fair un mark et gagner le jeu! Jouer comme tu veut,
+        rappelez-vous juste d\'avoir du plaisir. Les Mark sont dans le section des Mark.</string>
+    <string name="about_authors"> Conçu par:\nEvan Glicakis\nDenys Melyukhov</string>
+</resources>
