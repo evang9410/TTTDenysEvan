@@ -2,30 +2,31 @@
     <!-- Strings for the activity_main.xml -->
     <string name="app_name">TTTEvanDenys</string>
     <string name="btn_reset">Réinitialiser</string>
-    <string name="btn_about">Information</string>
+    <string name="btn_about">À Propos</string>
     <string name="btn_zero">Zéro</string>
-    <string name="btn_scores">Les Mark</string>
-    <string name="btn_play">Jouer</string>
+    <string name="btn_scores">Pointage</string>
+    <string name="btn_play">Jouez</string>
     <string name="playing_player1">Joueur Contre Joueur</string>
     <string name="playing_droid">Joueur Contre Le Droid</string>
 
     <!-- Strings for activity_score.xml -->
     <string name="stats">Statistiques</string>
-    <string name="tv_player1_wins">Joueur1 Gagner:</string>
-    <string name="tv_player2_wins">Joueur2 Gagner:</string>
-    <string name="tv_droid_wins">Droid Gagner:</string>
-    <string name="tv_draws">match nul:</string>
+    <string name="tv_player1_wins">Joueur1:</string>
+    <string name="tv_player2_wins">Joueur2:</string>
+    <string name="tv_droid_wins">Droid:</string>
+    <string name="tv_draws">Match nul:</string>
 
     <!-- TOAST MESSAGES -->
-    <string name="zero_toast">Réinitialiser les mark à 0</string>
+    <string name="zero_toast">Réinitialiser les pointage</string>
     <string name="draw_toast">MATCH NUL! Réinitialiser pour jouer encore</string>
-    <string name="p1_win_toast">Joueur1 Gagner!</string>
-    <string name="p2_win_toast">Joueur2 Gagner!</string>
-    <string name="droid_wins_toast">Droid Gagner!</string>
+    <string name="p1_win_toast">Joueur1 a Gagner!</string>
+    <string name="p2_win_toast">Joueur2 a Gagner!</string>
+    <string name="droid_wins_toast">Le Droid a Gagner!</string>
 
     <!-- About -->
-    <string name="about_text"><b>Tic Tac Toe</b> un jeu de strategie et de l\'esprit où les joueur mettre
-    un X où une O en 3 consécutive carrés pour fair un mark et gagner le jeu! Jouer comme tu veut,
-        rappelez-vous juste d\'avoir du plaisir. Les Mark sont dans le section des Mark.</string>
+    <string name="about_text"><b>Le tic tac toe</b> est un jeu de stratégie et d\'esprit où les joueurs 
+        doivent placer un X ou un O sur 3 carré consécutifs pour gagner la partie et donc marquer un point. 
+        Jouez tant que vous vouler mais rappelez vous que ce n\'est qu\'un jeu donc amusez-vous! 
+        Le résultats des parties sont dans la section pointage.</string>
     <string name="about_authors"> Conçu par:\nEvan Glicakis\nDenys Melyukhov</string>
 </resources>
