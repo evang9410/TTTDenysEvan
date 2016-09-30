@@ -122,10 +122,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void reset_board() {
-        for(ImageButton ib : board){
-            ib.setImageResource(R.drawable.tile);
-            ib.setClickable(true);
-            ib.setTag("");
+        for(int i =0; i<9; i++){
+            board[i].setImageResource(R.drawable.tile);
+            board[i].setClickable(true);
+            board[i].setTag(i + 1 + "");
         }
         turn = 0;
     }
@@ -232,7 +232,7 @@ public class MainActivity extends AppCompatActivity {
                 board_tags[i] = "o";
             }
             else
-                board_tags[i]="";
+                board_tags[i]= i+1 + "";
         }
         return board_tags;
     }
@@ -259,7 +259,7 @@ public class MainActivity extends AppCompatActivity {
             else{
                 board[i].setImageResource(R.drawable.tile);
                 board[i].setClickable(true);
-                board[i].setTag("");
+                board[i].setTag(i+1 + "");
             }
         }
     }
@@ -294,7 +294,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
+/*
     private String check_win(){
 
         // Check across
@@ -397,16 +397,30 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+*/
 
-    /*private String check_win(){
+    private String check_win(){
 
         for(int i =0; i<3; i++)
         {
+            String topL = board[0].getTag().toString();
+            String topC = board[1].getTag().toString();
+            String topR = board[2].getTag().toString();
+            String centerL = board[3].getTag().toString();
+            String centerC = board[4].getTag().toString();
+            String centerR = board[5].getTag().toString();
+            String botL = board[6].getTag().toString();
+            String botC = board[7].getTag().toString();
+            String botR = board[8].getTag().toString();
+
+
             //Check horizontal lines
-            if(board[i*3].getTag().equals(board[1+i*3]) && board[i*3].getTag().equals(board[2+i*3]))
+            if(board[i*3].getTag().equals(board[1+i*3].getTag()) && board[i*3].getTag().equals(board[2+i*3].getTag()))
             {
                 return board[i*3].getTag().toString();
             }
+
+
             //Check vertical lines
             else if(board[i].getTag().equals(board[3+i].getTag()) && board[i].getTag().equals(board[6+i].getTag()))
             {
@@ -415,14 +429,15 @@ public class MainActivity extends AppCompatActivity {
             //Check diagonals
             else if(i < 2)
             {
-                if(board[4].getTag().equals(board[i*2]) && board[4].getTag().equals(board[i*-2 + 8]))
+                if(board[4].getTag().equals(board[i*2].getTag()) && board[4].getTag().equals(board[i*-2 + 8].getTag()))
                 {
                     return board[4].getTag().toString();
                 }
             }
         }
         return "none";
-    }*/
+    }
+
 
     /**
      * Private method to load the view objects into memory to be manipulated.
@@ -464,3 +479,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
+
