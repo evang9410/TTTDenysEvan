@@ -269,19 +269,6 @@ public class MainActivity extends AppCompatActivity {
         boolean play = true;
         Random rnd = new Random();
         int rng = rnd.nextInt(9);
-        /*if(check_win().equals("none")) {
-            while (play) {
-                if (!board[rng].getTag().equals("x") && !board[rng].getTag().equals("o")) {
-                    Log.d("droid", "And he tries playing at" + board[rng].getTag().toString());
-                    play=false;
-                    board[rng].setTag("o");
-                    board[rng].setImageResource(R.drawable.tile_o);
-                    tile_click(board[rng]);
-                    turn++;
-                } else
-                    rng = rnd.nextInt(9);
-            }
-        }*/
         if(check_win().equals("none")) {
             while (true) {
                 if (!board[rng].getTag().equals("x") & !board[rng].getTag().equals("o")) {
@@ -294,126 +281,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-/*
-    private String check_win(){
-
-        // Check across
-
-        // For X
-        if(board[0].getTag().equals("x") & board[1].getTag().equals("x") & board[2].getTag().equals("x")){
-            // player 1 wins
-            Log.d("winner", "x wins");
-            return "x";
-        }
-        if(board[3].getTag().equals("x") & board[4].getTag().equals("x") & board[5].getTag().equals("x")){
-            // player 1 wins
-            Log.d("winner", "x wins");
-            return "x";
-        }
-        if(board[6].getTag().equals("x") & board[7].getTag().equals("x") & board[8].getTag().equals("x")){
-            // player 1 wins
-            Log.d("winner", "x wins");
-            return "x";
-        }
-
-        //For O
-        if(board[0].getTag().equals("o") & board[1].getTag().equals("o") & board[2].getTag().equals("o")){
-            // player 2 wins
-            Log.d("winner", "o wins");
-            return "o";
-        }
-        if(board[3].getTag().equals("o") & board[4].getTag().equals("o") & board[5].getTag().equals("o")){
-            // player 2 wins
-            Log.d("winner", "o wins");
-            return "o";
-        }
-        if(board[6].getTag().equals("o") & board[7].getTag().equals("o") & board[8].getTag().equals("o")){
-            // player 2 wins
-            Log.d("winner", "o wins");
-            return "o";
-        }
-
-        // Check Vertical
-        // For X
-        if(board[0].getTag().equals("x") & board[3].getTag().equals("x") & board[6].getTag().equals("x")){
-            // player 1 wins
-            Log.d("winner", "x wins");
-            return "x";
-        }
-        if(board[1].getTag().equals("x") & board[4].getTag().equals("x") & board[7].getTag().equals("x")){
-            // player 1 wins
-            Log.d("winner", "x wins");
-            return "x";
-        }
-        if(board[2].getTag().equals("x") & board[5].getTag().equals("x") & board[8].getTag().equals("x")){
-            // player 1 wins
-            Log.d("winner", "x wins");
-            return "x";
-        }
-
-        // For O
-        if(board[0].getTag().equals("o") & board[3].getTag().equals("o") & board[6].getTag().equals("o")){
-            // player 2 wins
-            Log.d("winner", "o wins");
-            return "o";
-        }
-        if(board[1].getTag().equals("o") & board[4].getTag().equals("o") & board[7].getTag().equals("o")){
-            // player 2 wins
-            Log.d("winner", "o wins");
-            return "o";
-        }
-        if(board[2].getTag().equals("o") & board[5].getTag().equals("o") & board[8].getTag().equals("o")){
-            // player 2 wins
-            Log.d("winner", "o wins");
-            return "o";
-        }
-
-        // Check Diagonal
-        // For X
-        if(board[6].getTag().equals("x") & board[4].getTag().equals("x") & board[2].getTag().equals("x")){
-            // player 1 wins
-            Log.d("winner", "x wins");
-            return "x";
-        }
-        if(board[0].getTag().equals("x") & board[4].getTag().equals("x") & board[8].getTag().equals("x")){
-            // player 1 wins
-            Log.d("winner", "x wins");
-            return "x";
-        }
-
-        // For O
-        if(board[6].getTag().equals("o") & board[4].getTag().equals("o") & board[2].getTag().equals("o")){
-            // player 2 wins
-            Log.d("winner", "o wins");
-            return "o";
-        }
-        if(board[0].getTag().equals("o") & board[4].getTag().equals("o") & board[8].getTag().equals("o")){
-            // player 2 wins
-            Log.d("winner", "o wins");
-            return "o";
-        }
-
-        return "none";
-
-
-    }
-*/
 
     private String check_win(){
 
         for(int i =0; i<3; i++)
         {
-            String topL = board[0].getTag().toString();
-            String topC = board[1].getTag().toString();
-            String topR = board[2].getTag().toString();
-            String centerL = board[3].getTag().toString();
-            String centerC = board[4].getTag().toString();
-            String centerR = board[5].getTag().toString();
-            String botL = board[6].getTag().toString();
-            String botC = board[7].getTag().toString();
-            String botR = board[8].getTag().toString();
-
-
             //Check horizontal lines
             if(board[i*3].getTag().equals(board[1+i*3].getTag()) && board[i*3].getTag().equals(board[2+i*3].getTag()))
             {
