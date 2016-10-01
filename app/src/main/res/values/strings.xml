@@ -28,4 +28,10 @@
     O in 3 consecutive spaces to score a point and win the game! Play as much as you like, scores are
     stored in the Scores section of this app. Don\'t forget, this is just a game and remember to have fun!</string>
     <string name="about_authors"> Written by:\nEvan Glicakis\nDenys Melyukhov</string>
+
+    <!-- Alert Dialog -->
+    <string name="alert_title">Winner!</string>
+    <string name="alert_message_p1">You win! Click on Reset to play again.</string>
+    <string name="alert_message_p2">Player2 Wins! Click on Reset to play again.</string>
+    <string name="alert_message_droid">Droid Wins</string>
 </resources>

@@ -29,4 +29,10 @@
         Jouez tant que vous vouler mais rappelez vous que ce n\'est qu\'un jeu donc amusez-vous! 
         Le résultats des parties sont dans la section pointage.</string>
     <string name="about_authors"> Conçu par:\nEvan Glicakis\nDenys Melyukhov</string>
+
+    <!-- Alert Dialog -->
+    <string name="alert_title">Gagnant!</string>
+    <string name="alert_message_p1">Tu as gagné! Réinitialiser.</string>
+    <string name="alert_message_p2">Joueur2 a gagné! Réinitialiser.</string>
+    <string name="alert_message_droid">Le Droid a gagné</string>
 </resources>
