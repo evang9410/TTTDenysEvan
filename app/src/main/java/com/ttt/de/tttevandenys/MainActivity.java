@@ -226,32 +226,41 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-            if (check_win().equals("x")) {
-                alert_user(R.string.alert_message_p1);
+        if (check_win().equals("x")) {
+            alert_user(R.string.alert_message_p1);
 
-                player1_wins++;
-                editor.putInt("player1_wins", player1_wins);
-                editor.commit();
-            } else if (check_win().equals("o") & isDroid) {
-                alert_user(R.string.alert_message_droid);
-                droid_wins++;
-                editor.putInt("droid_wins", droid_wins);
-                editor.commit();
-            } else if (check_win().equals("o") & isDroid == false) {
-                alert_user(R.string.alert_message_p2);
-                player2_wins++;
-                editor.putInt("player2_wins", player2_wins);
-                editor.commit();
-            }
-            if (turn == 9 && check_win().equals("none")) {
-                Toast toast = Toast.makeText(MainActivity.this, getText(R.string.draw_toast), Toast.LENGTH_LONG);
-                toast.show();
-                draw_count++;
-                editor.putInt("draw_count", draw_count);
-                editor.commit();
-            }
+            player1_wins++;
+            editor.putInt("player1_wins", player1_wins);
+            editor.commit();
+            disable_tiles();
+        } else if (check_win().equals("o") & isDroid) {
+            alert_user(R.string.alert_message_droid);
+            droid_wins++;
+            editor.putInt("droid_wins", droid_wins);
+            editor.commit();
+            disable_tiles();
+        } else if (check_win().equals("o") & isDroid == false) {
+            alert_user(R.string.alert_message_p2);
+            player2_wins++;
+            editor.putInt("player2_wins", player2_wins);
+            editor.commit();
+            disable_tiles();
+        }
+        if (turn == 9 && check_win().equals("none")) {
+            Toast toast = Toast.makeText(MainActivity.this, getText(R.string.draw_toast), Toast.LENGTH_LONG);
+            toast.show();
+            draw_count++;
+            editor.putInt("draw_count", draw_count);
+            editor.commit();
+            disable_tiles();
+        }
 
         //save_board_state();
+    }
+
+    private void disable_tiles(){
+        for(ImageButton i : board)
+            i.setClickable(false);
     }
 
     private void alert_user(int winner) {
