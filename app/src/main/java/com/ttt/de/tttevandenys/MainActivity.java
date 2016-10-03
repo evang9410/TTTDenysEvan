@@ -217,13 +217,14 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Turn", "player2 turn");
                 if (!isDroid)
                     tv_playing.setText(R.string.playing_player1);
-                if(check_win().equals("none")) {
+                if (check_win().equals("none")) {
                     ib.setTag("o");
                     ib.setImageResource(R.drawable.tile_o);
                     turn++;
                     //check_win();
                 }
             }
+        }
 
             if (check_win().equals("x")) {
                 alert_user(R.string.alert_message_p1);
@@ -249,7 +250,6 @@ public class MainActivity extends AppCompatActivity {
                 editor.putInt("draw_count", draw_count);
                 editor.commit();
             }
-        }
 
         //save_board_state();
     }
@@ -343,8 +343,6 @@ public class MainActivity extends AppCompatActivity {
             while (true) {
                 if (!board[rng].getTag().equals("x") & !board[rng].getTag().equals("o")) {
                     tile_click(board[rng]);
-                    board[rng].setClickable(false);
-                    board[rng].setImageResource(R.drawable.tile_o);
                     break;
                 } else {
                     rng = rnd.nextInt(9);
