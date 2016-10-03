@@ -206,10 +206,11 @@ public class MainActivity extends AppCompatActivity {
                 ib.setTag("x");
                 ib.setImageResource(R.drawable.tile_x);
                 turn++;
-                check_win();
+                //check_win();
                 if (check_win().equals("none") & turn < 9) {
                     if (isDroid) {
                         droid_turn();
+                        return;
                     }
                 }
             } else {
@@ -220,7 +221,7 @@ public class MainActivity extends AppCompatActivity {
                     ib.setTag("o");
                     ib.setImageResource(R.drawable.tile_o);
                     turn++;
-                    check_win();
+                    //check_win();
                 }
             }
 
@@ -342,6 +343,8 @@ public class MainActivity extends AppCompatActivity {
             while (true) {
                 if (!board[rng].getTag().equals("x") & !board[rng].getTag().equals("o")) {
                     tile_click(board[rng]);
+                    board[rng].setClickable(false);
+                    board[rng].setImageResource(R.drawable.tile_o);
                     break;
                 } else {
                     rng = rnd.nextInt(9);
